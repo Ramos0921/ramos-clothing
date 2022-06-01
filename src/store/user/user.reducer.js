@@ -1,11 +1,5 @@
-import { createContext, useEffect, useReducer} from "react";
-import { USER_ACTION_TYPES } from "./user.types";
-import { USER_INITIAL_STATE } from "./user.types";
+import { USER_ACTION_TYPES, USER_INITIAL_STATE } from "./user.types";
 
-export const UserContext = createContext({
-    currentUser: null,
-    setCurrentUser: () => null,
-});
 
 export const userReducer = (state = USER_INITIAL_STATE, action) => {
     const { type, payload } = action;

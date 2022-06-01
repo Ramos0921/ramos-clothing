@@ -1,0 +1,8 @@
+
+export const CATEGORIES_INITIAL_STATE = {
+    categories: [],
+};
+
+export const CATEGORIES_ACTION_TYPES = {
+    SET_CURRENT_CATEGORIES: 'SET_CURRENT_CATEGORIES'
+}
