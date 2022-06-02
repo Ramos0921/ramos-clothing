@@ -14,7 +14,7 @@ const CategoryPreview = ({title, products}) => {
                 {
                     products.map((item, index) => {
                         if(index < 4) return (<ProductCard key={index} product={item} />)
-                        return;
+                        return null;
                     })
                 }
             </div>

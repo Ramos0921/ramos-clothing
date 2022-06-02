@@ -1,7 +1,7 @@
-import Home from './containers/home-container/home.component';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
+import Home from './containers/home-container/home.component';
 import NavigationBar from './containers/navigation-container/navigation-bar.component';
 import Authenticate from './components/authenticate/authenticate.component';
 import Shop from './containers/shop-container/shop.component';

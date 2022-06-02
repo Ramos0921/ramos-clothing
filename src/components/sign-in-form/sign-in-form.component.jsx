@@ -25,8 +25,7 @@ const SignInForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { user } = await signInUserWithEmailAndPassword(email, password);
-        
+            await signInUserWithEmailAndPassword(email, password);
             resetForm();
         } catch(e){
             if(e.code === 'auth/wrong-password' || e.code === 'auth/user-not-found'){
