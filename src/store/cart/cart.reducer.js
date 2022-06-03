@@ -1,4 +1,5 @@
 import { CART_ACTION_TYPES, CART_INITIAL_STATE } from "./cart.types";
+import { USER_ACTION_TYPES } from "../user/user.types";
 
 
 export const cartReducer = (state = CART_INITIAL_STATE, action) => {
@@ -9,7 +10,7 @@ export const cartReducer = (state = CART_INITIAL_STATE, action) => {
             return { ...state, isCartOpen: payload };
         case CART_ACTION_TYPES.SET_CURRENT_CART_ITEMS: 
             return { ...state, cartItems: payload };
-        case CART_ACTION_TYPES.CLEAR_CART: 
+        case USER_ACTION_TYPES.SIGN_OUT_SUCCESS: 
             return CART_INITIAL_STATE;
         default: 
         return state;

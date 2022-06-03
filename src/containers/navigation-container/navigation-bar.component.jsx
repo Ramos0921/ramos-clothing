@@ -13,7 +13,6 @@ import CartIcon from "../../components/cart-icon/cart-icon.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 import { selectIsCartOpen } from '../../store/cart/cart.selector';
 import { signOutStart } from "../../store/user/user.action";
-import { clearCart } from "../../store/cart/cart.action";
 
 const NavigationBar = () => {
     const dispatch = useDispatch();
@@ -23,7 +22,6 @@ const NavigationBar = () => {
     const signOut = () => {
         try {
             dispatch(signOutStart());
-            dispatch(clearCart());
         } catch (e) {   
             console.error(e);
         }
