@@ -27,3 +27,27 @@ export const signInSucces = user => {
 export const signInFail = error => {
     return { type: USER_ACTION_TYPES.SIGN_IN_FAIL, payload: error };
 };
+
+export const signUpStart = (email, password, displayName) => {
+    return { type: USER_ACTION_TYPES.SIGN_UP_START, payload: {email, password, displayName}};
+};
+
+export const signUpFail = error => {
+    return { type: USER_ACTION_TYPES.SIGN_UP_FAIL, payload: error};
+};
+
+export const signUpSuccess = (user, additionalUserInfo) => {
+    return { type: USER_ACTION_TYPES.SIGN_UP_SUCCESS, payload: {user, additionalUserInfo}}
+};
+
+export const signOutStart = () => {
+    return { type: USER_ACTION_TYPES.SIGN_OUT_START };
+};
+
+export const signOutSuccess = () => {
+    return { type: USER_ACTION_TYPES.SIGN_OUT_SUCCESS };
+};
+
+export const signOutFail = error => {
+    return { type: USER_ACTION_TYPES.SIGN_OUT_FAIL, payload: error };
+};

@@ -3,7 +3,6 @@ import { USER_ACTION_TYPES, USER_INITIAL_STATE } from "./user.types";
 
 export const userReducer = (state = USER_INITIAL_STATE, action) => {
     const { type, payload } = action;
-
     switch(type){
         case USER_ACTION_TYPES.SIGN_IN_SUCCESS:
             return {
@@ -36,7 +35,36 @@ export const userReducer = (state = USER_INITIAL_STATE, action) => {
             return {
                 ...state,
                 isLoading: false,
-            }
+            };
+        case USER_ACTION_TYPES.SIGN_UP_START: 
+            return {
+                ...state,
+                isLoading: true,
+            };
+        case USER_ACTION_TYPES.SIGN_UP_SUCCESS: 
+            return {
+                ...state,
+                isLoading: true,
+            };
+        case USER_ACTION_TYPES.SIGN_UP_FAIL:
+            return {
+                ...state,
+                isLoading: false,
+                error: payload,
+            };
+        case USER_ACTION_TYPES.SIGN_OUT_START: 
+            return {
+                ...state,
+                isLoading: true,
+            };
+        case USER_ACTION_TYPES.SIGN_OUT_SUCCESS:
+            return USER_INITIAL_STATE;
+        case USER_ACTION_TYPES.SIGN_OUT_FAIL: 
+            return {
+                ...state,
+                isLoading: false,
+                error: payload,
+            };
         default:
             return state;
     }
