@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { successfulPaymentClearCart } from "../../store/cart/cart.action";
 import { selectCartItemTotal } from "../../store/cart/cart.selector";
 import { selectCurrentUser } from "../../store/user/user.selector";
-import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
+import { BUTTON_TYPE_CLASSES } from "../button/button.component";
 import { PaymentFormContainer, FormContainer, PaymentButton } from "./payment-form.styles";
 
 const PaymentForm = () => {
@@ -39,6 +39,7 @@ const PaymentForm = () => {
            }
        });
        setIsProcessingPayment(false);
+       elements.getElement(CardElement).clear();
        if(paymentResult.error) return alert(paymentResult.error.message);
        alert("Payment Successful");
        dispatch(successfulPaymentClearCart());
