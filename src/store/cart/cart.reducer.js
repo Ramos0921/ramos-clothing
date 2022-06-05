@@ -10,6 +10,8 @@ export const cartReducer = (state = CART_INITIAL_STATE, action) => {
             return { ...state, isCartOpen: payload };
         case CART_ACTION_TYPES.SET_CURRENT_CART_ITEMS: 
             return { ...state, cartItems: payload };
+        case CART_ACTION_TYPES.SUCCESSFUL_PAYMENT_CLEAR_CART:
+            return CART_INITIAL_STATE;
         case USER_ACTION_TYPES.SIGN_OUT_SUCCESS: 
             return CART_INITIAL_STATE;
         default: 
