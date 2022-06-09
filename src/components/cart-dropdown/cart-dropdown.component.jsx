@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { CartDropdownContainer, EmptyMessage, CartItems } from './cart-dropdown.styles.jsx';
 import Button from '../button/button.component';
 import CartItem from '../cart-item/cart-item.component';
-import { setIsCartOpen } from '../../store/cart/cart.action.js';
-import { selectCartItems } from '../../store/cart/cart.selector.js';
+import { setIsCartOpen } from '../../store/cart/cart.action';
+import { selectCartItems } from '../../store/cart/cart.selector';
 
 const CartDropdown = () => {
     const dispatch = useDispatch();    
